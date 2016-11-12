@@ -1,0 +1,143 @@
+-Getting started with CSS Layout
+
+Class 4 - Margin collapsing in the header - 
+	The header did not have any margin, padding or border, so the first adjacent part to the BODY element was the h1's margin.
+	The browser therefore put this margin between BODY and HEADER. Adding any padding, or border to the header solved this as
+	the margins were no longer touching and therefore didn't collapse.
+
+Class 5 - Centering items anc containers
+	A wrapper wraps the entire content of the page, but we usually want to give more flexibility than this. By putting containers
+	around other elements we allow ourselves to both apply styling to content (like - take 70% of the page) and allow styling
+	on the elements themselves separately (like header bg-color - take 100% of the page) simultaneously. Containers
+	are therefore usually more felixble.
+
+Class 6 - Mobile First
+	When developing on mobile, one should make sure to take {almost} 100% of the screen. 1em, of margin/padding suffices as you
+	want to make the most of the little screen.
+	box-sizing: border-box forces the border and padding into the declared width. So that an item taking up 70% will not take
+	any more than this because of added border or padding.
+
+Class 7 - Sticky Footer
+	When the page contents are not long enough, the footer will be displayed right after them but not at the bottom of the page.
+	To solve this, one might put all of the content except from the footer and force its' height size to take the entire screen
+	using the min-height property and "vh" units which specify percents of the device's viewport size. Additionaly, to leave 
+	the footer at the bottom without scrolling the height might be set using the calc() function. So that if the footer-height
+	is 89px - min-height : calc(100vh - 89px) 
+
+-Controlling Layout with CSS Display Modes
+
+Class 1 - Inline
+	Inline values (<a>,<span>) are naturally put after the preceding element and go over to the next line when there is no
+	more space. 
+	They DO NOT have width OR height properties or vertical margin.
+	They do, however, have left and right margin and paddings settings.
+	#They do have vertical padding but such that it is ignored by other elements surrounding it.
+
+Class 2 - Inline-Block
+	Inline block continues on the same line as the previous element but also has the width and height property a block has.
+	Such an item can therefore also take a top\bottom margin.
+	Link items are naturally inline and are therefore usually clickable only when the cursor is on the text itself,
+	to make the entire block clickable, turn the display of the <a> to block so that it fills the surrounding element
+	and makes it clickable. For example - make an <li> clickable using "li a {display : block;}"
+	This also allows adding padding and margin which wouldn't apply to inline elements.
+
+Class 3 - Gaps and Spaces between inline and inline-block
+	The html interpreter, interprets line breaks between <li> or <div> items as spaces (as if it were regular text)
+	It therefore adds them in the page displayed. To negate them, one may add a negative margin between the elements,
+	such a margin that would equal the place that a space would have take. Using default fonts, that means 4px.
+	Another method is to comment the area between the <divs> so that no space is inserted.
+	#Multiple spaces and line-breaks are counted as one
+
+Class 4 -
+	Vertical-align - Allows a block to have the text centered toward top
+
+-Floats
+	Class 1 & 2:
+		Floats are floating inside their containing element. Meaning if they float left, they will stick to the left
+		part of their <div> or father element. However, they do have height and width, making them block elements,
+		but they do not interact similarly with surrounding elements. They do not overlap with adjacent content
+		but they can enter siblings' blocks,they are therefore not affected by sibling's margins.
+		When they enter surrounding block 2, block2's content willl float around the floating block.
+		Surprisingly, the margin of the floated element is applied to separate the element from
+		the surrounding content. 
+		Padding and border can also be applied to create even more separation.
+		The float basically disable surrounding element's natural inclination to avoid another element but leaves itself
+		the possibility to take more space using padding and margin.
+
+	Class 3:
+		A floating block element will no longer take a full line as this is the purpose of the float. It will now
+		be limited in size to its content size(+pad+marg).
+		Floating adjacent elements (like <li>) to the right will make the first element stick to the right of 
+		its container and the next one will stick to the right, but to the left of item 1, so that the
+		original order will actually be reversed. The solution might be to float the surrounding container
+		to the right, and only then the inside elements to the left.
+		#Floats do not add whitespaces like div elements
+		#If a block-level element contains only float elements, its height collapses
+		#If mulitple elements flow next to each other and there is no more room, the later elements will
+		be pushed down so that its top will be lower than the others' bottom
+		#A floating element will always be lower than all preceding elements.
+
+	Class 4 - Collapsing and Clearing:
+		Collapsing elements will still keep bg and border if they have padding or height as well as their margin
+		for other purpose. Otherwise, they will become invisible
+		{Overflow:hidden} hides overflowing content resizes the box and reformats the box context, which makes
+		it take the full size of the floating element(not clear why)
+
+	Class 5 - Clearfix
+		Adding a clearfix to the container (adoing it by adding a surrounding div container is always safe) 
+		is a better solution. Like this - 
+		.clearfix::after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+		This adds an empty element after the collapse and forces it to be separate from the floated elements. 
+		This cancels the collapsing and makes the element take the full size of the floated elements.
+
+-Project
+	
+	#Put the h1 with margin: 0; to add control and prevent margin collapsing.
+
+-Positioning
+
+	Class 1 - Absolute Positionning
+		Absolute positionning allows an elements to be fixed in a certain part of the screen.
+		The item will be there no matter what and other elements do not "see" it, it is almost as if
+		the element sits on another layer entirely.
+		The positioning can be specified relatively to the botoom\top right\left and in px\%\em\...
+
+	Class 2 - Relative
+		The positioning context of an element is set to that of the closest parent container.
+		If there is no parent element with relative positioning, the default context is the browser.
+		By having relative positioning, an element will move together with its parent element and 
+		will always be displayed in the same part of that element.
+
+	Class 3 - Adding pic caption
+		To add caption to an element, put the image in a <figure> container,
+		after the image by insert the caption text div (<figcaption>) add bg- with alpha-
+		background: rgba(19,43,102, .75); 
+		For it to be transperent.
+		And now using figcaption->absolute, figure->relative, the caption can be displayed
+		anywhere you want relative to the picture.
+		#Adding a negative value, take you in the other direction
+
+	Class 4 - Fixed positioning
+		 Fixed positioning makes the browser become the poisitioning context and fixes the item
+		 to a point, no matter if the user scrolls the page.
+		 Fixed positioning, like absolute, does not affect other items in the page. 
+		 It can therefore cover other elements on the page.
+		 To have a floating header not interrupting the flow of the page, give the body
+		 an upper padding equal to the height of the header.
+
+	Class 5- z-index
+		The z-index property controls the position of an element on the z-axis.
+		Usually elements don't occupy the same spot so this property is not
+		necessary, but absolute and relative element may overlap with other elements.
+		The default stacking order is according to the order in the html page, so
+		a later item will be on top of a previous one.
+		The default z-index value is 0, so to have an item be on top, it needs to have
+		a positive z-index value.
+		#z-index only applies to absolute, fixed and relative positioned elements.
+		#z-index is inherited from parent elements
+
+

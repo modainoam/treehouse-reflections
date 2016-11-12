@@ -1,0 +1,53 @@
+
+Media Queries - 
+	Class 1-@media Features
+		Media FEATURES are the filters you use in @media. The most common one is
+		min-width, but there are a bunch of others. One that might be useful is
+		ORIENTATION which specifies if the device is in landscape or portrait mode.
+		#@media screen only - "screen" specifies that this is not for priniting.
+		# a comma(,) in the filter can serve as an OR operator for multiple filters
+		to take effect.
+
+	Class 2 -Breakpoints
+		A breakpoint is a certain size where the layout doesn't hold any more
+		or doesn't look good. This is the threshold where the media query
+		will be applied to create a new layout.
+
+	Class 3 - When to use breakpoints?
+		A breakpoint should not be used for every type of devices, as this 
+		defeats the purpose of responsive web design. 
+		Breakpoints should be added when the content requires it, meaning
+		when a fix needs to be added or a feature could be added to better present
+		the webpage.
+		#There could be Minor and Major breakpoints. 
+		Not every breakpoints should introduce dramatic changes, some might just
+		fix the size of the header, or the position of one column.
+		Just be careful not to add too many breakpoint so as not to overcomplicate 
+		the code.
+
+Wrapping up -
+	
+	Class 1 - Common design patterns
+		Header Navigation -
+			Small Screen - wide stacked buttons (Hamburger)
+			Medium - Tabbed buttons side-by-side below headline
+			Large - Tabbed buttons and headling on the same line
+
+		Content- 
+			Small- One column, scrolling made easy
+			Medium - Two columns, better reading
+			Large - Three columns
+
+	Class 2 - Flexbox
+		Flexbox is another display module for CSS. It allows us to create a container
+		which can be either horizontal or vertical and inside which the elements can be
+		spread evenly and with specified proportion.
+		-display: flex; -> makes the container a flexbox parent, and all children elements flexbox-items
+		-flex-direction: row | column -> specifies the positioning of items inside
+		-justify-content: center | space-around | ... -> specifies the distibution of free space
+		-flex-grow: int -> specifies a unitless prpoortio of the size of the item compared to siblings
+
+	* Wesite for download basic html and CSS templates -
+		http://www.initializr.com/
+	* Flexbox Guide -
+		https://css-tricks.com/snippets/css/a-guide-to-flexbox/

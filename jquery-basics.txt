@@ -1,0 +1,41 @@
+Intorduction to Jquery
+	Class 2 -
+		# select an HTML element by using jQuery(".class") (or $(".class").
+		# You can then run a function on the element by using $('.a').hide();
+		# chaining functions is also possible -> $(".a").hide().show("slow");
+	Class - DOM
+		# Stands for Document Object Model
+		# In the past documents were accessed using pure javascript -> document.body
+		or getElementsByClass("warning") (no need for the dot)
+	Class 4 - Ready
+		Putting the JS code at the beginning of the page might be a problem
+		because it happens before the page elements have been loaded.
+		There are 2 solutions to that problem -
+		1. Surround the code with $( document ).ready(myFunc) or $(myFunc)
+		2. Preferred! - Put the JS script tags at the end of <body> in the HTML
+
+Build Spoiler Revealer
+	#append(htmlStr) -> append html at the end of the element
+	#remove -> remove the element from the DOM (hide makes display:none)
+	# this.prev() -> select the element that comes right before this.
+
+Build Flashlight
+	# this.attr() -> retrieve attribute
+	# jQuery can create HTML elements that are not part
+	of the DOM, like this ->
+	var $my_div = $("<div class="mydiv"></div>")
+	*It is customary to add a $ to recognize the
+	jQuery object.
+	# this.text() -> retrieve or change the html text
+
+Build Dropdown -
+	# hasClass() -> check if has the class
+	# this.parent() -> get parent element
+	# $select.val() -> get selected option
+	# window.location.replace(url) -> redirect
+
+Build Drawing tool -
+	# toggle() -> show/hide interchangeably
+	# click() -> can also be used to simulate a click when no args are passed
+	# on -> handler that dynamically updates
+	# $this[0] -> retrieves the object's full html

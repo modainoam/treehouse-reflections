@@ -1,0 +1,32 @@
+Loops
+	#for loop - 
+		for (var i=0; i < 10; i+=1) {}
+
+Arrays
+	
+	#Add elements using array.push(), you can also add multiple items separated
+	by a comma
+	#add to the beginning usin array.unshift()
+	#remove items using .pop() and .shift(), it also returns said item
+	#length is a property, not a method	
+	#array1.concat(array2) concats arrays
+	#array.indexOf("stringtofind") 
+
+Objects
+	#Object literals are kind of like dictionaries. 
+	var noam = {
+		name: 'Noam',
+		friend: "tamar"
+		,lifgoals: ['hide','seek']
+	}
+
+	#noam.name = 'matan' | also works
+
+	#for (var key in object) {
+		console.log(object[key]);
+	}
+
+	# object.key -> does not work as it is the same as looking for an element named "key"
+
+	#outputDiv = document.getElementById('output'); -> get a specific element in the HTML
+	#outputDiv.innerHTML = message; -> change the content of the HTML

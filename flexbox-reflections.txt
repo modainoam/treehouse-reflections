@@ -1,0 +1,50 @@
+Class 1 - Basic Terminology
+	# Flexbox Container -
+		The container of the elements that you will layout using flexbox.
+		Can be any type of element, even inline not just block.
+	# Flex Item -
+		The direct children of the flex container. These are the items that will be positionned using flexbox.
+	# Flex Axis - 
+		The axis along which the items will be displayed.
+		A flex box container has 2 axis -
+		The Main Axis - The horizontal axis and by default from left to right
+		The Cross Axis - The vertical axis and by default from top to bottom
+
+Class 2 - Setting up a flex layout
+	#The first step is assigning a flex container by using the display:flex property.
+	By default the flex container will be a block-level element which means it will stretch to fill its parent container. However, this property can also be set to display:inline-flex, this way the flex container will take only the size of its content and will behave like an inline-block element.
+
+Class 3 - Controlling the flex direction.
+	# The flex-direction property is set on the container and decides if this container will be a row of horizontally laid items or a column of stacked items.
+	# Reverse - row-reverse\column-reverse changes the firection of the main and cross axis so that the last item will appear first and items will start on the left\bottom
+
+	#Wrapping - By default the flexbox container will try to fit all of the content on one line. However, if the content takes too much space, it will overflow horizontally out of the container. To change the behavior of overflowing content you can add the wrap property to make the content wrap to the next line
+	# When the container is a column, the flex-wrap starts acting when the height is limited and will wrap the content to a new column
+
+Class 4 - Aligning content
+	# The justify-content property decides how the extra space in the container will be ditributed. 
+	#The margin: auto can be used alternatively(margin override jusitfy) to handle the extra spacing
+
+Class 5 - Order
+	# The order property can be used to control the position of an item inside the container.  The default order of items is -0 and any item with a lower value is displayed first.
+
+Class 6 - flex-grow
+	# By default, flex-items do not take any additional space in the current axis, the extra space is usually distributed using the justify-content property. However, using the flex-grow propery, the items are allowed to expand and take the extra space. By default the flex-grow value is 0, otherwise, the extra space is distributed proportionally to the flex-grow attribute.
+	# By using the flex-basis in conjunction you can set the size of each flex item either in px or %.
+	# Flex-basis sets the initial width\height of a flex-item. Below that size, the item will wrap to the next line and above that, the space will be distirbuted
+
+Class 7 - centering content
+	# Centering content with flexbox is really easy. There are many ways to do this. 
+	a - .container {
+		justify-content: center;
+		align-items: center;
+	}
+
+	b - .item {
+		margin: auto;
+	}
+	The margin intelligently distributes the extra space on every side and is therefore a great and easy solution
+
+Class 8 - Extras
+	# flex-flow: column wrap -> shorthand propertys
+	# align-content -> sets the spacing between wrapped lines

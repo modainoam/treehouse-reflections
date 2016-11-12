@@ -1,0 +1,55 @@
+-Selectors beyond the basics
+
+	Class 1 -
+			# "[class]" -> allows to select all the elements having a certain attribute
+			in this example, all elements having a class
+			#form[class="form-contact"] -> to target element with a specific attribute
+			#cursor: pointer; -> makes the mouse pointer clickable
+			#<a target= 'link'> -> makes the link open in another tab\window
+			
+	Class 2 - DRY
+		#Instead of targeting multiple specific items or changing the same value across
+		multiple CSS elements ADD DRY CLASSES, that is classes representing not a 
+		common function, but a commond design style. Like - .round {border-radius: 50%;}
+
+	Class 3 - Combinators
+		Combinators are a way of accessing elements using relations. The " "(space)
+		combinator is one that we already used and means ->child of
+		# ">" -> DIRECT child of (no grand-children)
+		# '+' -> immediately adjacent siblings (selects the second one) i.e - .button + .button
+		# '~' -> all following siblings. i.e - h1 ~ label -> selects all label following h1 in a container
+
+-Pseudo Classes
+
+	Class 1 -
+		# :first-child , :last-child -> a b:first_child select all b-type first child inside class a's
+		# :only-child -> affects only if there is just one element(not just from the same type)
+		# :empty -> affects element that don't have any content
+	Class 2 - Attribute matching
+		# links[href^="http://"] -> beginswith
+		# [atrribute$='endswith']
+		# [attribue*='contains']
+	Class 3 - UI pseudo elements
+		# :focus -> targets a form if selected 	
+	Class 4 - Advanced classes
+		# element:nth-child(odd) -> no spaces
+			odd/even -> every second child element
+			7 -> 7th element
+			(an +b) -> starting the b'th element select every a'th element
+			(-n + 3) -> selects the first 3 elements(counts down from 3)
+		# div:nth-of-type(n) -> selects the n'th occurrence of the type, on mater 
+		if there are other child elements interferring in between.
+		# nth-last-of-type(n) -> same but counts from the back
+		# :root -> always select the root element (usually html)
+		# :target -> selects the elements targeted by the page using (href->#id)
+		# box-shadow: 0 0 6px rgba( 0, 0, 0, 0.2) -> adds surrouding  shadow effects
+		# div:not(#col-a) -> selects all div elements that are not #col-a
+			not([type='submit']) , not(:first-child) -> also works
+
+	Class 4- pseudo elements
+		#::first-line, ::first-letter -> selects the first  part of an HTML text
+		# ::before, ::after -> usually works with content 
+			::before{
+				content: " " \ url(img.jpg)
+			}
+		# content: attr(href) -> allows to select the content of an attribute and display it

@@ -1,0 +1,6 @@
+Functions - 
+	When creating a function, always add "var" before a variable, otherwis it will overwrite the global variable.
+	By using var, it is created in the function scope.
+
+Errors - 
+	Syntax - throw new Error('error message');	

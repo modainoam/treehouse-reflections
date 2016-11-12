@@ -1,0 +1,9 @@
+~~~Hotkeys -
+  # ctrl + "\" -> toggles treeview
+  # ctrl + t -> search and open a file in the current project
+  # ctrl + enter -> replace all in replace menu
+  # ctrl + d + click -> place a multicursor on any occurrence of the word
+  # alt + up\down -> create new cursor up or down
+
+~~~Functions -
+  # Find & Replace Only in current selection using dedicated button or ctrl+alt+s

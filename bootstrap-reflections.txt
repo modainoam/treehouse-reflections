@@ -1,0 +1,62 @@
+renThe Grid System
+  The Grid is a main container, this container has
+  horizontal rows which themselves can be divided into
+  12 columns.
+  The columns all have a predefined fixed width for each
+  predefined breakpoint size.
+  To change that behavior and allow the columns to take
+  a constant portion of the screen you can change the
+  container to .container-fluid
+  #Columns Layout -
+  The default column is stacked for all devices width.
+  To change it to side-by-side, simply state how
+  many columns you want the element to span across.
+  There is a total of 12 columns per row, so if you
+  apply a total of more than 12 columns, the row
+  will overflow vertically downward.
+
+  #Pull and Push
+  using .pull-md-3 you can change the ordering of columns.
+  this is done by pushing column 1 and pulling column 2
+  until their places have been switched
+
+  #Hide elements ->.hidden-xs-down
+
+Navbar -
+  #Containers are constrained be the grid system and have default
+  width, centering. To have an element not aligned, just put it
+  outside any containers
+  # Jumbotrons - ribon-like elements good for displaying important
+  info and call-to-actions
+
+Buttons -
+  # Buttons can be centered, enlarged, and mage block-level
+  # button Classes can be applied to anchors as well
+
+Footer -
+  # navbar are also valid footer. Again, if you want to control
+  their width, put them in a container.
+  # Dropdown menus can be easily added with many variations
+  including a drop-up
+
+#When things start to fuck up, it's most likely because
+there is some error(non-related to bootstrap) in the HTML
+#Elements may take display settings from their parent element.
+
+Scrollspy -
+  # Scrollspy allows you to brighten the header according to the
+  user's current position on the screen.
+  # using the offset -> toggle at what distance from this part you
+  want to highlight the nv
+
+Forms -
+  # Use formgroups to group together common form elements
+  #  class="form-inline" -> can be used to override the default form stackin behavior
+  # The <fieldset> tag is used to group related elements in a form.
+  And may help the form be more stable than the <div>
+  # the .form-control class should be used on input elements to get styling
+  # custom checkboxes are overriding the default tick box(the square itself)
+  # custom-controls-stacked class can make the buttons stacked as they are inline
+  by default
+  # BStrap alerts can be used to create small alerts for the user that can easily be
+  dismissed

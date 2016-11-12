@@ -1,0 +1,132 @@
+Intro- 
+	Class 1-
+	sass files are saved as .scss . To compile on the go use saas --watch . to watch the current folder
+	# "&" represents the parent selector\s so that you can 
+	easily do 
+		a {
+		color
+		&:hover{
+		color
+		}
+		}
+
+	Class 2 - Vairables
+
+	Variables are defined with a "$" sign like this -
+	$color: blue;
+
+	Class 3 - Mixins
+
+		Mixins are resuable parts of code that you can include
+		in any of your selectors.
+		They first need to be defined - 
+		@mixin large_links {
+			a {
+			font-size: 2rem;
+			}
+		}
+
+		and they can later be included like this -
+
+		.link-list {
+			@include large_links;
+		}
+
+	#Mixins can also include variables like this - 
+		@mixin($color1, $color2) {
+			a{
+			color: $color1;
+			}
+		}
+
+		Class 4 - Extends
+
+		@extends can be used to use another selector as a base template
+		for a new selector. It's pretty similar to mixins except it's
+		a little bit shorter in syntax and has better compressed output,
+		and also that it cannot have variables.
+		syntax - for imaginary classes(extends works with normal ones too)
+		%.myclass {
+			color: pink;
+		}
+
+		.bar {
+			@extend : .myclass;
+		}
+
+		Class 5 - Colors
+
+		You can run functions on your colors.
+		$bg-col ; #c45e43;
+		a {
+			&:hover {
+			color: lighten($bg-col, 20%);
+			}
+		}
+
+		# darken\lighten($col, 20%) -> make brighter shade
+		# complement - desaturate - mix(col1,col2)
+
+		Class 5- Imports
+
+		#@import "pages/_search.scss" imports the sass code into the local
+		page.
+		#For the scss file not to be compiled into a css file name the scss
+		file to be imported with a starting "_"
+		#It is common to use several starting imports as follow -
+		-_reset.css ->A file that can be found online to reset default CSS values
+		-_variables.css
+		-_mixins.css
+		-_globals.css -> Styles that are common to the entire page
+
+		By using imports, you can easilly have your stylesheet uploaded only once and prevent the creation of multiple stylesheet that the user
+		may take more time to download.
+
+		Class 6 - sass functions
+		#sass lets you build your own functions, the only
+		criterion is that they have a return value.
+		Syntax - 
+		@function pxify($value){
+			@return unquote($value + "px")		}
+
+		unqoute -> removes quotes from output CSS
+
+	Class 6 - Debugging
+		# In the command line there are many useful tools - 
+		sass -l main.scss:main.css -> shows the sass line number
+		that corresponds to this rule in the created css file
+		# sass --style nested(default)/compressed/compact/expanded -> compresses or expands the outputted CSS, the compressed is best for Production environment as it is a smaller file to download
+
+	Class 7 - Media queries
+	# media queries can be nested and don't have to be written in the end of the file.
+	Just add the @media(max 20px) {} and it works
+
+	Class 8 - Interpolation
+
+	# To use a variable litteraly (as a CSS string) put a #{$variable}
+	For example 
+	$color = blue;
+	.item-#{$color} {
+		color: $color;
+	}
+
+	Class 9 - Loops
+
+	@for $i from 1 through 100 {
+		h1:nth-child(#{$i}) {
+		bg-color: lighten(black, $i)
+		}
+	}
+
+	@each $color in blue, red, green, yellow {
+		.box-#{$color} {
+		bg: $color;
+		}
+	}
+
+	Class 10 - Unpacking variables
+
+	# lists can also be used as mixins variables like this;
+	@mixin rainbow($colors...) -> these three dots mean a list
+		@each $color in $colors {}
+	@include rainbow(red, green, blue)
