@@ -5,6 +5,6 @@ Class 1 - Getting Started
   the ".git" folder is hidden, but it contains all of the repo datam all the history and commits and everything is there
 
 Class 2 - committing files
-  #git add myfile.txt -> add file to staging
+  # git add myfile.txt -> add file to staging
   # git commit -> opens commit dialogue and commits
   # git commit -a -m "fix bug" -> -a = add all changed files(no need for add). -m = commit message
