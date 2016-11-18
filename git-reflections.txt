@@ -18,3 +18,4 @@ Class 4 - Looking Back
   # git checkout commit_id -> lets you use an old version.
     * 4-5 first digits of id should suffice
     * to go back to normal, use checkout master
+    * HEAD~1 -> stands for the previous commited version(not the last one)
