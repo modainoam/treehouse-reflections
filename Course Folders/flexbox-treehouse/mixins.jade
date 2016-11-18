@@ -1,0 +1,32 @@
+//output:jade_index.html
+- var books = [  {  name:"A Game of Thrones", words: 344000, author: "George R.R Martin"},  {  name:"A Feast for Crows", words: 344000, author: "George R.R Martin"},  {  name:"A Clash of Kings", words: 344000, author: "George R.R Martin"}]
+  
+mixin book-card(id, book)
+  li.card
+    .figure
+      img(src="#{id}.jpg")
+      a Full Details of #{book.name}
+    table
+      th Title
+      tr #{book.name}
+      th Words
+      tr #{book.words}
+      
+html
+  include header
+
+body
+  h1.logo Welcome to my site
+  block content
+    #main-content
+  .container
+    ul
+    for book, index in books
+      +book-card(index, book)
+    
+  footer 
+    block footer
+      #custom-footer
+    span 2016 inc
+
+    
