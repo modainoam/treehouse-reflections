@@ -7,4 +7,8 @@ Class 1 - Getting Started
 Class 2 - committing files
   # git add myfile.txt -> add file to staging
   # git commit -> opens commit dialogue and commits
-  # git commit -a -m "fix bug" -> -a = add all changed files(no need for add). -m = commit message
+  # git commit -a -m "fix bug" -> -a = add all changed files(no need for add). -m = commit message. -a only adds currently tracked files
+
+Class 3 - Staging Area
+  The staging area includes all the files that were added but not commited.
+  # git status -> shows current branch and commit status
