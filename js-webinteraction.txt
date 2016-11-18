@@ -1,0 +1,6 @@
+Class 1 - 
+	In JS the window is the main scope of the page.
+	Using the console you you can browse the window object which will also include all of you JS variables.
+	An interesting variable is location
+
+	The windows includes a document object. This object, also referred to as the DOM, has the entire HTML content of the page organised by nodes, each in itself a JS object.
