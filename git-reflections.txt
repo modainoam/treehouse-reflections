@@ -12,3 +12,9 @@ Class 2 - committing files
 Class 3 - Staging Area
   The staging area includes all the files that were added but not commited.
   # git status -> shows current branch and commit status
+
+Class 4 - Looking Back
+  # git log -> lets you look at all you past commits.
+  # git checkout commit_id -> lets you use an old version.
+    * 4-5 first digits of id should suffice
+    * to go back to normal, use checkout master
