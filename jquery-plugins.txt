@@ -1,0 +1,6 @@
+There are a few steps necessary to run every plugin 
+
+	1. Link plugin stylesheet in HTML(before your css)
+	2. Format HTML according to plugin
+	3. Link to script
+	4. Run plugin using your script
