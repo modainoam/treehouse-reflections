@@ -1,0 +1,67 @@
+Class 1 - Introduction
+  # First word is tag
+  # everything after first word is text
+  # To write multiline text, put pipe at the beginning like this-
+    Line 1
+    |have a br to put on html multiline
+    | Line 3
+
+Class 2 - if
+  # Jade supports if clauses and variable declarations. just indent
+  and use a hyphen - before declaring a var
+  - var cat = "book"
+  if cat == "movie"
+    p It's a movie
+  else
+    p it's not a movie
+
+Class 3 - Loops
+  # syntax exmple
+  ul
+    each value , index in ["A Game of Thrones", "A Feast for Crows", "A Clash of Kings"]
+      li.book= index + ":" +  value
+
+  # Literal strings are exited using  #{var1}
+
+Class 4 - Includes
+  # To include another file simpy run include "filename_no_extension"
+  for example if I have a header.jade file I can run -
+  html
+    include header
+  body
+    include content-1
+
+Class 5 - Template Inheritance
+  # To extend base style with new content you can create a base jade file and extend its blocks as follows -
+  base.jade -
+
+  body
+    h1.logo Welcome to my site
+    block content
+      #main-content
+
+  inherit.jade
+  extends base
+
+  block content
+    .col-1 My first comment
+    .col-2 Second Lorem ipsum dolor sit amet,
+
+  -When setting the block it does not have to be indented
+  -By default, new data overrides the previous data that was in the block. To add to a block data without overriding it simply use the "append"\prepend command
+  append data
+    - var name = "noam"
+    li name
+
+Class 6 - Mixins
+  # Mixins allow you to reuse blocks of code and use them with variables
+
+  mixin products(title, img_id, price)
+    .product
+      .product_wrapper
+        img.prod_image(
+        src="#{img_id}.jpg"
+        )
+        .prod_content {
+          h2.title #{title}
+        }
