@@ -1,0 +1,35 @@
+Class 1 - Introduction
+  AJAX stands for asynchronous JS and XML, it is used to send real-time info from the browser to the server and back and update the page using this data.
+  There are 4 steps to an AJAX request -
+  1. Create request object
+  2. Define callback function
+  3. Open request
+  4. Send request
+
+Class 2 - Send basic AJAX request
+  # create new request object before every request with -
+  var xhr = new XMLHttpRequest();
+  # define callback when the xhr object changes -
+  xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {{
+        document.getElementById("ajax").innerHTML = xhr.response;
+      }
+    };
+  # open the request using desired method -and the url it will be sent to
+  xhr.open("GET", "sidebar.html");
+  # Send request -
+      xhr.send();
+
+
+Class 3 - Get vs. Post
+  Use the get method when you want to retrieve information from the website and post when you want to update data on the webserver.
+
+  The get method is used by the browser when we type in a url, it just asks the html file using the url location.
+  All of GET's information is stored inside the URL. This is limited in 2 ways - Some browsers have a limitation on the nu. of chars in a URL and more importantly, the URL is saved in history and should therefore not contain sensitive information.
+
+  The POST instead sends a request separate from the URL. This can handle a lot more information but is also more complicated.
+
+
+Class 4 - Security limitations
+  # An AJAX request can only be made to the same server.
+  Additionaly, it has to be made to the same port, protocol(http or https) and exact URL (db.mysite != www.mysite)
