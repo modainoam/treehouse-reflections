@@ -1,6 +1,22 @@
-Functions - 
-	When creating a function, always add "var" before a variable, otherwis it will overwrite the global variable.
+Functions -
+	When creating a function, always add "var" before a variable, otherwise it will overwrite the global variable.
 	By using var, it is created in the function scope.
 
-Errors - 
-	Syntax - throw new Error('error message');	
+Errors -
+	Syntax - throw new Error('error message');
+
+This -
+  There a 4 ways "this" is instantiated -
+  -In function call - Refers to the scope, usually global or window in a browser
+  -In object methods call - refers to the object
+    var noam {eyes: 2,
+              saveEyes: function(){
+                console.log("Noam has " + this.eyes + " eyes")
+              }
+            };
+  -Within a constructed object - refers to the instance! not the object
+    var person = function(name) {
+      this.firstName = name || "noam" -> gives default value of "noam"
+    }
+    me = new person(noam)
+  -Using bind or .call
