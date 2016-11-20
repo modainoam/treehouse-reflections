@@ -1,5 +1,5 @@
 Class 1 - Introduction
-  AJAX stands for asynchronous JS and XML, it is used to send real-time info from the browser to the server and back and update the page using this data.
+  AJAX stands for asynchronous JS and XML, it is used to send real-time info from the browser to the server and back and update the page using this data without being referred to a new URL.
   There are 4 steps to an AJAX request -
   1. Create request object
   2. Define callback function
@@ -33,3 +33,12 @@ Class 3 - Get vs. Post
 Class 4 - Security limitations
   # An AJAX request can only be made to the same server.
   Additionaly, it has to be made to the same port, protocol(http or https) and exact URL (db.mysite != www.mysite)
+
+Class 5 - xhr readyState and status
+  # the readyState property of the xhr object keeps track of the stages of theajax request. readyState === 4 -> the answer has arrived back to the browser.
+  # the status property return 200 if the request went smoothly and an error otherwise. 404 for file not found, 500 for internal error and more.
+
+Class 6 - JSON
+  # Json properties and values have to be surrounded by double-quotes
+  # parse JSON in js using the JSON.parse(json-string) command which is available in all web browsers
+  # once the JSON is parsed and assigned to a variable, you can treat it like any other varaible object
