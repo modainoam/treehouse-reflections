@@ -42,3 +42,39 @@ Class 6 - JSON
   # Json properties and values have to be surrounded by double-quotes
   # parse JSON in js using the JSON.parse(json-string) command which is available in all web browsers
   # once the JSON is parsed and assigned to a variable, you can treat it like any other varaible object
+
+Class 7 - jQuery and AJAX
+  # jQuery contains method to make AJAX request a lot easier by skipping many of the required steps. To get HTML content from the server simply use ->
+  $("containingElement").load("url.html");
+
+  # jQuery contains other shorthand methods available to view in the jQuery api under AJAX. For Example this is the get method
+  $.get(url, data, callback) -> the data can be either a query string or a js object that will be parsed to q query string. The callback is the callback function and receives the ajax response as its argument.
+  For example -
+  callback function(response) {$("#div").html(response)};
+
+  *$.get() ->is shorthand for jQuery.get()
+  **Useful jQuery functions ->
+    $("div").html("myHtml")
+    $.each(array, function(index, value){})
+    $.getJSON(url,data,callback)
+
+Class 8 - AJAX post
+  # $.post(url, data, callback) -> is basically the same as $get()
+  # However, jQuery has more methods to allow easier form submitting.
+  $(form).submit( function(event) {
+    event.preventDefault() //->prevents the default redirection
+    var url = $(this).attr("action") //-> gets the urls from the action
+    var data = $(this).serialize() //-> retrieves and parses all the form data
+  });
+
+Class 9 - $.ajax() method
+  # all the other shorthands are built on this function.
+  $.ajax(url, settings) -> the settings is the interesting part and allows more flexibility.
+  i.e -> have a timer for response and action if it isn't returned in time.
+
+Class 10 - Errors.
+  # Normally ajax jquery methods fail silently. However, if you want to catch the error, simply concatenate the .fail() method to you ajax request like this
+  $.get("asd.html", callback).fail(function(jqXHR){ //-> return as jquery XHR object
+  console.log("jqXHR.status")
+  })
+  * the method does not work on $.load \ $.getJSON()
