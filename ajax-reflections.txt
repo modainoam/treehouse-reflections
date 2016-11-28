@@ -11,7 +11,7 @@ Class 2 - Send basic AJAX request
   var xhr = new XMLHttpRequest();
   # define callback when the xhr object changes -
   xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4) {{
+      if (xhr.readyState === 4) {
         document.getElementById("ajax").innerHTML = xhr.response;
       }
     };
@@ -35,7 +35,7 @@ Class 4 - Security limitations
   Additionaly, it has to be made to the same port, protocol(http or https) and exact URL (db.mysite != www.mysite)
 
 Class 5 - xhr readyState and status
-  # the readyState property of the xhr object keeps track of the stages of theajax request. readyState === 4 -> the answer has arrived back to the browser.
+  # the readyState property of the xhr object keeps track of the stages of the ajax request. readyState === 4 -> the answer has arrived back to the browser.
   # the status property return 200 if the request went smoothly and an error otherwise. 404 for file not found, 500 for internal error and more.
 
 Class 6 - JSON
@@ -78,3 +78,10 @@ Class 10 - Errors.
   console.log("jqXHR.status")
   })
   * the method does not work on $.load \ $.getJSON()
+
+Class 11 - JSONP
+  # Cross-origin policy does not allow you to retrieve data from another server, to circumvent this, jQuery creates another script tag in the HTML to embed JS code from a different server, like we do when we add a CDN.
+  To do this, you simply have to add ?jsoncallback=? add the end of the get requested URL -
+  flickrAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+  #After this, jQuery automatically converts the returned JS file into a JSON object.
+  *This has to be done in addition to the format:"JSON" sent to the server as part of the AJAX params, as the param define the format of the request but not the procedure to get it.
