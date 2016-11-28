@@ -17,9 +17,25 @@ Class 2 - Constructors
   # they are assigned like this -
     me = new Person("noam", 25);
 
-  # The "new" keyword allows js to understand this refers to the new object
+  # The "new" keyword allows js to understand "this" refers to the new object
 
 Class 3 - prototyping
   # A class's properties and methods are usually reinstantiated for every new object created. This means is takes a lot of memory and disk space. For a method to only be created once you can define the mehod as a prototype of the class, meaning the method will apply to every instance of the class(although it can be overwritten)
 
   MyConstructor.prototype.add = function(a,b) {return a+b};
+
+Class 4 - Inheritance
+  # Objects can inherit properties and methods from other object, just like classes in python. To do so, you have to call the "father" object on the new child object as follows -
+  function Father(name,age) {
+    this.name = name;
+    this.age = age;
+  };
+  Father.prototype.shout = function() {return "aaaa"};
+
+  dad = new Father("oren",54);
+
+  function Child(weight, name, age) {
+    Father.call(this, name, age); //->this refers to the new Child object and will be "this" too in the Father call
+    this.weight = weight;
+  }
+  Child.prototype = Object.create(Father.prototype);
