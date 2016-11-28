@@ -20,7 +20,7 @@ Class 2 - Constructors
   # The "new" keyword allows js to understand "this" refers to the new object
 
 Class 3 - prototyping
-  # A class's properties and methods are usually reinstantiated for every new object created. This means is takes a lot of memory and disk space. For a method to only be created once you can define the mehod as a prototype of the class, meaning the method will apply to every instance of the class(although it can be overwritten)
+  # A class's properties and methods are usually reinstantiated for every new object created. This means it takes a lot of memory and disk space. For a method to only be created once you can define the mehod as a prototype of the class, meaning the method will apply to every instance of the class(although it can be overwritten)
 
   MyConstructor.prototype.add = function(a,b) {return a+b};
 
@@ -39,3 +39,11 @@ Class 4 - Inheritance
     this.weight = weight;
   }
   Child.prototype = Object.create(Father.prototype);
+
+Class 5 - The module pattern
+  # JS files clutter the browser environment, to solve this, you can run your entire code inside an anonymous function. That way they are local variables and erased the second the function stops running.
+  !function(){ //the "!" forces the function to assess itself and therefore run, without it there is just a declaration followed by () which is a syntax error
+    #myCodeGoesHere
+  }(); // Runs the wrapping function
+
+  # _ (underscore) is a library that you can import using a CDN, which handled some common functions like looping, filtering and templating.
