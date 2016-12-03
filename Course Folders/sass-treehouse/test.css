@@ -1,0 +1,9 @@
+body {
+  background-color: #313632;
+  color: #7beec2;
+}
+
+a:hover {
+  background: rgba(123, 238, 194, 0.86);
+  color: #313632;
+}
