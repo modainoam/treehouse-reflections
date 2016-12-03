@@ -2,7 +2,7 @@ Class 1 - Getting Started
   #git init - initialize empty repo
     *optionally 'git init folder_name' -> creates folder
 
-  the ".git" folder is hidden, but it contains all of the repo datam all the history and commits and everything is there
+  the ".git" folder is hidden, but it contains all of the repo data all the history and commits and everything is there
 
 Class 2 - committing files
   # git add myfile.txt -> add file to staging
@@ -19,3 +19,11 @@ Class 4 - Looking Back
     * 4-5 first digits of id should suffice
     * to go back to normal, use checkout master
     * HEAD~1 -> stands for the previous commited version(not the last one)
+
+Class 5 - Branches
+  # git branch branch_name -> creates a new branch(does not checkout said branch)
+  # git checkout branch_name -> checkout branch
+  # git checkout -b branch_new -> checkouts and creates a new branch if it doesn't exist
+  * When yoiu create a new branch, it splits from your current position in your current branch, meaning if I am in branch_1 and I create a new branch_2, branch_2 will have all the commits of branch_1 and therefore may not be up to date with "master"
+  # git branch -> lists all existing branches and shows current branch
+  # git branch -D useless_branch -> deletes branch

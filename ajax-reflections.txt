@@ -81,7 +81,7 @@ Class 10 - Errors.
 
 Class 11 - JSONP
   # Cross-origin policy does not allow you to retrieve data from another server, to circumvent this, jQuery creates another script tag in the HTML to embed JS code from a different server, like we do when we add a CDN.
-  To do this, you simply have to add ?jsoncallback=? add the end of the get requested URL -
+  To do this, you simply have to add ?jsoncallback=? add the end of the getJSON() requested URL -
   flickrAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
   #After this, jQuery automatically converts the returned JS file into a JSON object.
   *This has to be done in addition to the format:"JSON" sent to the server as part of the AJAX params, as the param define the format of the request but not the procedure to get it.
