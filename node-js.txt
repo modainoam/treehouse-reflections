@@ -1,3 +1,34 @@
 Class 1 - Introduction
   # Node is a scripting language you can launch usind CMD-> node
   # console.dir, console.error() -> are used to dislay different messages
+
+Class 2 - Getting a JSON
+  # The get method can be used quite easily by requiring the http module and running a https.get(url, callback(response))
+  # In node.js files arrive chunk by chunk, so if you want to use the whole content of the file you have to add the chunks together and wait for the "end" status to arrive. Like so-
+  body ="";
+  response.on("data", function(chunk){
+    body += chunk;
+  })
+
+  response.on("end", function(){
+    console.log(typeof body);
+    })
+  });
+  # Add an action in case there is an error -
+
+    request.on("error", function(error){
+      console.error(error.message);
+    })
+  * typeof var1 -> returns the type of var1
+
+Class 3 - Error handling
+  # try {block} catch(error){block_handle}
+
+Class 4 - modules
+  # my_module = require("./module.js") -> get same dir
+  # you only import the file in explicitly specified in the module file using -
+  module.exports.foo = foo;
+  # my_module.foo() -> use function
+
+Class 5 - Getting command line arguments
+  # CMD arguments can be retrieved using the process.argv elements
