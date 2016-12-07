@@ -27,3 +27,23 @@ Class 5 - Branches
   * When yoiu create a new branch, it splits from your current position in your current branch, meaning if I am in branch_1 and I create a new branch_2, branch_2 will have all the commits of branch_1 and therefore may not be up to date with "master"
   # git branch -> lists all existing branches and shows current branch
   # git branch -D useless_branch -> deletes branch
+
+Class 6 - Merging
+  # git merges separate branches automatically if it can and adds all the merged branch commits to the master log on the same timeline. When a file has been edited by 2 different branches, an extra "merging" commit will be added to the time the merging was done.
+  # git merge branch2
+  # conflicts - when changes have been made to the same line, the merge cannot resolve and when attempting to merge git will issue an error and let the user know what the conflicting files are. In the conflicting file the conflicting part will be denoted as follows -
+  <<<<<<<<<<<<<<<<HEAD
+  line master
+  =============
+  line brnach2
+  >>>>>>>>>>>>>branch2
+
+Class 7 - Working with remote directories
+  # Remote directories can be used to sync between different people's work.
+  # git clone url -> get a copy of a shared repository
+  # git remote -> list your remote repositories
+  # git remote add remote_name remote_url
+  # the origin remote is the default remote name given to the original location of a cloned repository
+  # git push remote_name [branch_name] -> push to the specified remote all changes or changes made in a specific branch
+  # git pull origin -> pull the changes made in origin
+  When trying to push to a repo,you first have to be up to date with this repository. Meaning you have to pull the changes, merge them in your local branch and only then you can push your changes freely.
