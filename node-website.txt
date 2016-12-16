@@ -1,0 +1,12 @@
+Class 1 - Create server
+  The http.createServer function runs a local server that you can access in the browser. The response is rendered using the response.write() function and is stopped from being rendered once the response.end(content) has been sent.
+  *setInterval(function, millisecs) -> runs a function every X ms.
+
+Class 2 - Routing
+  # EventEmitter.call(this); -> a constructor class that gives event emitting methods. See node website profile.js for more info
+  # One way of routing URLs to the server is to use routing functions that filter on the request.url. If every function filters on a different URL, you can simply send the request to all routing functions and they will do the filtering.
+
+Class 3 - Accessing files
+  # Accessing file is done using the filesystem module.
+  -var fs = require("fs");
+  # files can be read either asynchronuously(so that the next line will probably be run before the file is read) using fs.readFile or in blocking sync mode using fs.readFileSync
