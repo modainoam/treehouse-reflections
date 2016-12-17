@@ -1,0 +1,24 @@
+Class 1 - Install packages
+  # npm install packageName [-g] ->  -g installs globally
+  #http-server [dirName] -> mount an http-server on the desired folder. Users on the network can access this folder
+
+Class 2 - packages
+  # npm init -> guides you through the package creation process. This allows you to state your projects dependencies(package and version) and add some information as to what that package does.
+  Creating the package needs to be done in the project folder. When you want to install a package and add it to the dependencies automatically use the --save flag -> npm install pkg --save
+
+  # this allows you to ignore the entire "node_modules" folder when pushing to git. this is done using the ".gitignore" file by adding node_modules/ inside
+  The package.json file will be included so that all of the dependencies will be installed automatically when running "npm install" in the folder without any argument
+
+  # npm install pkg --save-dev -> is used to specify a pkg only to be installed in dev and not prod. dev is the default environment. To specify another one use - "NODE_ENV=production npm install" -> it did not work for me so I did npm install --only=dev
+
+Class 3 - npm as a task-runner
+  # npm packages contain by default a "script" {"taskName": "cmd command"}
+  that allows you to run a command simply by running in a cmd  "npm run taskName".
+  For example -
+  {"script": {
+    "test":"mocha", // testing library
+    "copy-files": "cp src/*.html build/ & cp pages/*.html build/",
+    "build": "npm run test && npm run copy-files"
+  }}
+
+  the buils helps you run all the necessary actions at once. Using a single '&' makes them run in parallel and '&&' sequentially 
