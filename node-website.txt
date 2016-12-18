@@ -10,3 +10,7 @@ Class 3 - Accessing files
   # Accessing file is done using the filesystem module.
   -var fs = require("fs");
   # files can be read either asynchronuously(so that the next line will probably be run before the file is read) using fs.readFile or in blocking sync mode using fs.readFileSync
+
+Class 4 - HTTP
+  # content-types - The content type is part of the header sent to the browser by the server. It specifies the type of the file which tells the browser how to render it - it could be plain text, html and much more...
+    response.writeHead(200, {"Content-Type": "text/html"});
