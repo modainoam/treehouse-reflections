@@ -21,4 +21,19 @@ Class 3 - npm as a task-runner
     "build": "npm run test && npm run copy-files"
   }}
 
-  the buils helps you run all the necessary actions at once. Using a single '&' makes them run in parallel and '&&' sequentially 
+  the buils helps you run all the necessary actions at once. Using a single '&' makes them run in parallel and '&&' sequentially
+
+Class 4 - Updating Packages
+  Package dependencies info looks like this
+  "devDependencies": {
+  "mocha": "^2.2.5", //^Will update minor versions but not major (Class B and C)
+  "uglify-js": "~2.4.23", //~Will update patches but not minor (Class C only)
+  "good-pkg" : "1.2.5" // Will require specifically this version
+}
+  # npm outdated -> Shows if there are outdated packages in the folder
+  # npm update -> Updates packages to new version required by the package.json file. If there is no such file, it will update all packages
+  # update http-server -g -> updates specific packages
+
+Class 5 - Uninstall
+# npm uninstall http-server -> uninstalls packages but leaves it in the dependencues
+# npm uninstall --save -> removes from the package.json dependencies. Also see --save-dev to remove from dev dependencies
